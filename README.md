@@ -1,4 +1,4 @@
-# CHOUPI - An open-source security-oriented Java Card Virtual Machine
+# CHOUPI - An open-source secure-oriented Java Card Virtual Machine
 
 ## Copyright and license
 
