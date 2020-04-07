@@ -211,7 +211,7 @@ install.
 
 # Roadmap
 
-For the version 1.0, CHOUPI must implements:
+For the version 1.0, CHOUPI must implement:
 
 * [ ] Java exceptions handling
 * [ ] Input/Output buffer (like ISO7816 buffer)
