@@ -295,28 +295,29 @@ if(CHOUPI_TARGET_STM32)
   add_executable(
     choupi
     "${JCVM_CORE_SOURCES_FILES}"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f401xe.s"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f401xe.s"
     "${CMAKE_SOURCE_DIR}/os/src/malloc.c"
     "${CMAKE_SOURCE_DIR}/os/src/stm32f4xx_it.c"
     "${CMAKE_SOURCE_DIR}/os/src/system_stm32f4xx.c"
     "${CMAKE_SOURCE_DIR}/os/src/newlib_stubs.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"
-    "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"
+    "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
   )
 
   target_include_directories(
     choupi
-    PUBLIC ${CMAKE_BINARY_DIR}
-           "${CMAKE_SOURCE_DIR}/src"
-           "${CMAKE_SOURCE_DIR}/os/src"
-           "${CMAKE_SOURCE_DIR}/os/Drivers"
-           "${CMAKE_SOURCE_DIR}/os/Drivers/STM32F4xx_HAL_Driver/Inc/"
-           "${CMAKE_SOURCE_DIR}/os/Drivers/CMSIS/Device/ST/STM32F4xx/Include/"
-           "${CMAKE_SOURCE_DIR}/os/Drivers/CMSIS/Include/")
+    PUBLIC
+      ${CMAKE_BINARY_DIR}
+      "${CMAKE_SOURCE_DIR}/src"
+      "${CMAKE_SOURCE_DIR}/os/src"
+      "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers"
+      "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Inc/"
+      "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include/"
+      "${CMAKE_SOURCE_DIR}/os/STM32CubeF4/Drivers/CMSIS/Include/")
 
   # -DSTM32F401xE
   add_compile_definitions(STM32F401xE)
